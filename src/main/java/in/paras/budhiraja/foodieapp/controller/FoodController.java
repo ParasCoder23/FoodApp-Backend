@@ -25,6 +25,13 @@ public class FoodController {
     @Autowired
     private FoodService foodService;
 
+    @GetMapping("/check")
+    public ResponseEntity<String > check(){
+        String data = "Yeah, it is workign fine!!";
+        return new ResponseEntity<>(data, HttpStatus.OK);
+    }
+
+
     @PostMapping("/image")
     public ResponseEntity<String> uploadImage(@RequestParam("image")MultipartFile file){
         String data = this.foodService.upload(file);
