@@ -60,7 +60,7 @@ public class SecurityConfig {
 
     private UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://strong-meringue-c67df8.netlify.app/", "https://luxury-blini-3a7d58.netlify.app/"));
+        config.setAllowedOrigins(List.of("https://strong-meringue-c67df8.netlify.app", "https://luxury-blini-3a7d58.netlify.app"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         config.setAllowCredentials(true);
@@ -77,5 +77,4 @@ public class SecurityConfig {
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         return new ProviderManager(authenticationProvider);
     }
-
 }
